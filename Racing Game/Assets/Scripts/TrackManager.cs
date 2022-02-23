@@ -22,12 +22,11 @@ public class TrackManager : MonoBehaviour
     float feverBurnTime;
     public float carCrashPower = 5;
     [Header("Level stuff")]
-    [SerializeField] int startLevel = 0;
+    [SerializeField] int startLevel = 1;
     [SerializeField] public int currentlevel;
     [SerializeField] float showLevelTime;
     float showaddedLevelCountdown;
     [SerializeField] TextMesh carLevelText;
-    [SerializeField] string prefix = "Lvl. ";
     [SerializeField] AnimationCurve textPopupCurve;
     [SerializeField] float curveMultiplier;
     Coroutine showupLevel;
@@ -47,7 +46,6 @@ public class TrackManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
         currentCarSize = car.localScale.y;
         lvltxtwrldrot = carLevelText.transform.rotation;
         currentlevel = startLevel;
@@ -80,7 +78,7 @@ public class TrackManager : MonoBehaviour
         }
         
         currentPlus += lvl;
-        carLevelText.text = prefix + currentPlus.ToString();
+        carLevelText.text = "+" + currentPlus.ToString();
         showaddedLevelCountdown = showLevelTime;
 
         if (showupLevel == null)
@@ -115,7 +113,7 @@ public class TrackManager : MonoBehaviour
             t.localScale -= Vector3.up * Time.deltaTime * textRefreshSpeed;
             yield return new WaitForEndOfFrame();
         }
-        lvlText.text = currentlevel.ToString();
+        lvlText.text = "Lv." + currentlevel.ToString();
 
         while (t.localScale.y < 1)
         {
@@ -151,7 +149,10 @@ public class TrackManager : MonoBehaviour
         while(stop)
         {
             time -= Time.deltaTime * curveMultiplier;
-            carLevelText.transform.localScale = Vector3.one * time;
+            if (carLevelText != null)
+            {
+                carLevelText.transform.localScale = Vector3.one * time;
+            }
             yield return new WaitForEndOfFrame();
 
             if (time <= 0f)
@@ -168,7 +169,10 @@ public class TrackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        carLevelText.transform.rotation = lvltxtwrldrot;
+        if (carLevelText != null)
+        {
+            carLevelText.transform.rotation = lvltxtwrldrot;
+        }
         
         //print(fever);
         int posi = racers.Count;
