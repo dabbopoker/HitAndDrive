@@ -13,6 +13,7 @@ public class CarDestroy : MonoBehaviour
     bool zooming;
     [SerializeField] GameObject speedParticle;
     [SerializeField] AudioSource engineSound;
+    [SerializeField] GameObject car;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -23,7 +24,7 @@ public class CarDestroy : MonoBehaviour
 
         if (collision.gameObject.layer == 11)
         {
-            Destroy(FindObjectOfType<CarController>().gameObject);
+            Destroy(car);
             Instantiate(explosionParticle, gameObject.transform.position + new Vector3(0, 0.3f, 0), gameObject.transform.rotation);
             engineSound.Stop();
             FindObjectOfType<AudioManager>().Play("Fail");

@@ -5,17 +5,24 @@ using UnityEngine;
 public class Pedestrian : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    [SerializeField] int lvl = 1;
+    [SerializeField] int lvlToKill = 0;
     Rigidbody rb;
 
     bool collidedOnce = false;
     float force;
     private void Start()
     {
+        foreach(BoxCollider b in GetComponents<BoxCollider>())
+        {
+            b.enabled = true;
+        }
+        
         force = TrackManager.instance.carCrashPower;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == 8 && TrackManager.instance.currentlevel >= lvlToKill)
         {
             rb = GetComponent<Rigidbody>();
 
@@ -27,7 +34,7 @@ public class Pedestrian : MonoBehaviour
 
             if (!collidedOnce)
             {
-                print("yup;");
+                TrackManager.instance.addLevel(lvl);
                 FindObjectOfType<AudioManager>().Play("Hit");
                 //Apply force
                 Vector3 dirToMove = (other.transform.position - transform.position).normalized;
@@ -52,13 +59,15 @@ public class Pedestrian : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8 && !collidedOnce && rb != null)
         {
             Vector3 forceDir = collision.transform.forward + collision.transform.up;
             rb.mass = 1f;
             rb.AddForce(forceDir * force, ForceMode.Impulse);
         }
     }
+
+    
 
     //IEnumerator DestroySelf()
     //{
