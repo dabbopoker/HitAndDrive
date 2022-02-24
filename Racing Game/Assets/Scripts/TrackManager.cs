@@ -92,13 +92,23 @@ public class TrackManager : MonoBehaviour
         {
             showupLevel = StartCoroutine(ShowUpText());
         }
+        bool carChanged = false;
         foreach (CarChange c in carChanges)
         {
             if(c.levelToReach <= currentlevel && c.changed == false)
             {
-                changeCarModel(c.newCarModel);
-               
+                //changeCarModel(c.newCarModel);
+                carChanged = true;
             }
+        }
+        Animator carAnim = car.GetComponent<Animator>();
+        if(carChanged)
+        {
+            carAnim.Play("LevelUpCar");
+        }
+        else
+        {
+            carAnim.Play("LevelUp");
         }
 
     }
