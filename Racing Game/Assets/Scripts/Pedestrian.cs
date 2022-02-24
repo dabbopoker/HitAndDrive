@@ -9,7 +9,7 @@ public class Pedestrian : MonoBehaviour
     [SerializeField] int lvlToKill = 0;
     Rigidbody rb;
 
-    bool collidedOnce = false;
+    [HideInInspector] public bool collidedOnce = false;
     float force;
     private void Start()
     {
@@ -42,10 +42,10 @@ public class Pedestrian : MonoBehaviour
                 Vector3 moveDir;
                 if(rightOrLeft)
                 {
-                    moveDir = other.transform.right;
+                    moveDir = other.transform.forward + (other.transform.up + other.transform.right * 0.5f);
                 }else
                 {
-                    moveDir = other.transform.right * -1;
+                    moveDir = other.transform.forward + (other.transform.up * 0.5f) + (other.transform.right * -0.5f);
                 }
                 Vector3 forceDir = moveDir;
                 rb.mass = 1f;

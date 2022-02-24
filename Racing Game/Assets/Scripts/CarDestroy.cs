@@ -7,6 +7,7 @@ public class CarDestroy : MonoBehaviour
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject collisionParticle;
     [SerializeField] GameObject explosionParticle;
+    [SerializeField] ParticleSystem levelUpParticle;
     [SerializeField] GameObject emoji;
     [SerializeField] GameObject gameOverScreen;
 
@@ -19,7 +20,8 @@ public class CarDestroy : MonoBehaviour
     {
         if (collision.gameObject.layer == 9)
         {
-            Instantiate(collisionParticle, collision.GetContact(0).point, Quaternion.identity);
+            //Instantiate(collisionParticle, collision.transform.position + new Vector3(0, 0.1f, 0), transform.rotation * Quaternion.Euler(-90f, 0, 0f));
+            levelUpParticle.Play();
         }
 
         if (collision.gameObject.layer == 11)
