@@ -24,7 +24,12 @@ public class CarDestroy : MonoBehaviour
 
         if (collision.gameObject.layer == 11)
         {
-            Death();
+            Destroy(car);
+            Instantiate(explosionParticle, gameObject.transform.position + new Vector3(0, 0.3f, 0), gameObject.transform.rotation);
+            engineSound.Stop();
+            FindObjectOfType<AudioManager>().Play("Fail");
+
+            gameOverScreen.SetActive(true);
         }
 
         if (collision.gameObject.layer == 12)
@@ -37,16 +42,6 @@ public class CarDestroy : MonoBehaviour
         {
             zooming = true;
         }
-    }
-
-    public void Death()
-    {
-        Destroy(car);
-        Instantiate(explosionParticle, gameObject.transform.position + new Vector3(0, 0.3f, 0), gameObject.transform.rotation);
-        engineSound.Stop();
-        FindObjectOfType<AudioManager>().Play("Fail");
-
-        gameOverScreen.SetActive(true);
     }
 
     private void Update()

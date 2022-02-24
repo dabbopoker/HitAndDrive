@@ -5,10 +5,8 @@ using UnityEngine;
 public class Pedestrian : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    
     [SerializeField] int lvl = 1;
-    [SerializeField] int lvlToKill = 1;
-
+    [SerializeField] int lvlToKill = 0;
     Rigidbody rb;
 
     bool collidedOnce = false;
@@ -66,11 +64,6 @@ public class Pedestrian : MonoBehaviour
             Vector3 forceDir = collision.transform.forward + collision.transform.up;
             rb.mass = 1f;
             rb.AddForce(forceDir * force, ForceMode.Impulse);
-        }
-
-        if (collision.gameObject.layer == 8 && TrackManager.instance.currentlevel <= lvlToKill)
-        {
-            FindObjectOfType<CarDestroy>().Death();
         }
     }
 
