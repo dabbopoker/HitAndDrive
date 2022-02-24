@@ -230,7 +230,6 @@ MonoBehaviour:
   currentlevel: 0
   showLevelTime: 1
   carLevelText: {fileID: 1249527779}
-  prefix: 'Lvl. '
   textPopupCurve:
     serializedVersion: 2
     m_Curve:
