@@ -121,7 +121,7 @@ public class TrackManager : MonoBehaviour
             t.localScale -= Vector3.up * Time.deltaTime * textRefreshSpeed;
             yield return new WaitForEndOfFrame();
         }
-        lvlText.text = currentlevel.ToString();
+        lvlText.text = "Lv." + currentlevel.ToString();
 
         while (t.localScale.y < 1)
         {
