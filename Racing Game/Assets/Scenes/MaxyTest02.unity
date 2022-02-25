@@ -411,10 +411,7 @@ MonoBehaviour:
   - levelToReach: 30
     newCarModel: {fileID: 500333061}
     changed: 0
-<<<<<<< Updated upstream
   carCollider: {fileID: 1801321142}
-=======
->>>>>>> Stashed changes
 --- !u!4 &13245894
 Transform:
   m_ObjectHideFlags: 0
@@ -28352,10 +28349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 390552508}
-<<<<<<< Updated upstream
   offset: {x: 0, y: 0, z: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1 &966559959
 GameObject:
   m_ObjectHideFlags: 0

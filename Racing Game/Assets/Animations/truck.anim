@@ -14,7 +14,6 @@ AnimationClip:
   m_RotationCurves: []
   m_CompressedRotationCurves: []
   m_EulerCurves: []
-<<<<<<< Updated upstream
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -81,10 +80,6 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Trails/RightTireSkid
-=======
-  m_PositionCurves: []
-  m_ScaleCurves: []
->>>>>>> Stashed changes
   m_FloatCurves:
   - curve:
       serializedVersion: 2
@@ -114,7 +109,6 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-<<<<<<< Updated upstream
       path: 1792565267
       attribute: 1
       script: {fileID: 0}
@@ -143,8 +137,6 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-=======
->>>>>>> Stashed changes
       path: 3293450092
       attribute: 538195251
       script: {fileID: 0}
@@ -192,7 +184,6 @@ AnimationClip:
     path: LevelCanvas
     classID: 224
     script: {fileID: 0}
-<<<<<<< Updated upstream
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -421,8 +412,6 @@ AnimationClip:
     path: Trails/RightTireSkid
     classID: 4
     script: {fileID: 0}
-=======
->>>>>>> Stashed changes
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
