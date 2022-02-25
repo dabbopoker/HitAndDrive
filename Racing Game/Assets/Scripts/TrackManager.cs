@@ -39,7 +39,7 @@ public class TrackManager : MonoBehaviour
     Coroutine updateTxtCoroutine;
     [SerializeField] float carSizePlus = 0.1f;
     [SerializeField] float currentCarSize;
-    [SerializeField] Transform car;
+    [SerializeField] public Transform car;
     [SerializeField] GameObject standardCarModel;
     public List<CarChange> carChanges;
     List<GameObject> usedCarModels = new List<GameObject>();
@@ -98,17 +98,39 @@ public class TrackManager : MonoBehaviour
             if(c.levelToReach <= currentlevel && c.changed == false)
             {
                 //changeCarModel(c.newCarModel);
+                c.changed = true;
                 carChanged = true;
             }
         }
         Animator carAnim = car.GetComponent<Animator>();
         if(carChanged)
         {
+            if (currentlevel >= 30)
+            {
+                carAnim.SetFloat("Car", 2);
+                carAnim.Play("ChangeToBigTruck");
+            }
+            else
             carAnim.Play("LevelUpCar");
         }
         else
         {
-            carAnim.Play("LevelUp");
+            if(currentlevel >= 30)
+            {
+                carAnim.SetFloat("Car", 2);
+                carAnim.Play("bigtrucklvlupanim");
+            }
+            else if(currentlevel >= 10)
+            {
+                carAnim.SetFloat("Car", 1);
+                carAnim.Play("LevelUpTruck");
+            }
+            else
+            {
+                carAnim.SetFloat("Car", 0);
+                carAnim.Play("LevelUp");
+            }
+            
         }
 
     }
