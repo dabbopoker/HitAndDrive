@@ -133,7 +133,7 @@ public class TrackManager : MonoBehaviour
             }
             else
             {
-                carCollider.SetFloat("car", 0);
+                carCollider.SetFloat("car", 0   );
                 carAnim.SetFloat("Car", 0);
                 carAnim.Play("LevelUp");
             }
