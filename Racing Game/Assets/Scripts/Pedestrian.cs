@@ -24,6 +24,8 @@ public class Pedestrian : MonoBehaviour
     {
         if (other.gameObject.layer == 8 && TrackManager.instance.currentlevel >= lvlToKill)
         {
+            transform.parent.transform.parent.transform.parent.GetChild(2).GetComponent<Canvas>().enabled = false;
+
             rb = GetComponent<Rigidbody>();
 
             animator.enabled = false;

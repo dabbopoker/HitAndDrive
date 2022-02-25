@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17668402, g: 0.22115713, b: 0.3034593, a: 1}
+  m_IndirectSpecularColor: {r: 0.17668419, g: 0.22115763, b: 0.30346012, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -225,7 +225,7 @@ MonoBehaviour:
   levelLongness: 5
   decreaseMultiplicator: 2
   killValue: 0
-  carCrashPower: 1.65
+  carCrashPower: 3
   startLevel: 1
   currentlevel: 0
   showLevelTime: 1
@@ -13916,6 +13916,7 @@ MonoBehaviour:
   animator: {fileID: 34073412}
   lvl: 1
   lvlToKill: 0
+  collidedOnce: 0
 --- !u!65 &866577177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14260,6 +14261,7 @@ MonoBehaviour:
   animator: {fileID: 1432778593}
   lvl: 10
   lvlToKill: 10
+  collidedOnce: 0
 --- !u!65 &877724735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15007,6 +15009,7 @@ MonoBehaviour:
   animator: {fileID: 918771779}
   lvl: 1
   lvlToKill: 0
+  collidedOnce: 0
 --- !u!65 &934279614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15211,6 +15214,7 @@ MonoBehaviour:
   animator: {fileID: 1244611730}
   lvl: 2
   lvlToKill: 2
+  collidedOnce: 0
 --- !u!65 &938537044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23343,6 +23347,7 @@ MonoBehaviour:
   animator: {fileID: 1710963795}
   lvl: 1
   lvlToKill: 0
+  collidedOnce: 0
 --- !u!65 &1540365199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24193,6 +24198,7 @@ MonoBehaviour:
   animator: {fileID: 610537460}
   lvl: 1
   lvlToKill: 0
+  collidedOnce: 0
 --- !u!65 &1614013546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27216,6 +27222,7 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   collisionParticle: {fileID: 2692766723274482731, guid: 3dd2397979f00834d8159e41acc63e65, type: 3}
   explosionParticle: {fileID: 6628612064335551708, guid: 28e70c9ff7b1cf84d99b6bca0198a92b, type: 3}
+  levelUpParticle: {fileID: 3351140300603794030, guid: e0bb0ad27ac910a48a20d8a778dea8a7, type: 3}
   emoji: {fileID: 9068945019791597551, guid: c4f2b82f6cf4dec4bbf2c4d521f3ee6c, type: 3}
   gameOverScreen: {fileID: 952545373}
   speedParticle: {fileID: 2108043298}
@@ -29033,6 +29040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2022021282}
+  - component: {fileID: 2022021283}
   m_Layer: 0
   m_Name: pivot
   m_TagString: Untagged
@@ -29059,6 +29067,25 @@ Transform:
   m_Father: {fileID: 390552508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2022021283
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022021281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 476d49eacf5467c429dd131356d75e3f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &2025102820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8856790077123654497, guid: d1010e756480b8741bb3c4e9122d952e, type: 3}
@@ -29128,6 +29155,7 @@ MonoBehaviour:
   animator: {fileID: 1719711173}
   lvl: 5
   lvlToKill: 5
+  collidedOnce: 0
 --- !u!65 &2031572624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30825,8 +30853,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 21591caab99a6d54fae4813634509ec5, type: 2}
-  - {fileID: 2100000, guid: 21591caab99a6d54fae4813634509ec5, type: 2}
+  - {fileID: 2100000, guid: 1fa556afd7c5cd640a1f6f5ec91ead0b, type: 2}
+  - {fileID: 2100000, guid: 1fa556afd7c5cd640a1f6f5ec91ead0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
