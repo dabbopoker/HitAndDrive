@@ -43,6 +43,8 @@ public class TrackManager : MonoBehaviour
     [SerializeField] GameObject standardCarModel;
     public List<CarChange> carChanges;
     List<GameObject> usedCarModels = new List<GameObject>();
+    [SerializeField]
+    Animator carCollider;
 
     List<TextMeshPro> tmps = new List<TextMeshPro>();
     // Start is called before the first frame update
@@ -107,8 +109,10 @@ public class TrackManager : MonoBehaviour
         {
             if (currentlevel >= 30)
             {
+                carCollider.SetFloat("car", 2);
                 carAnim.SetFloat("Car", 2);
                 carAnim.Play("ChangeToBigTruck");
+                StartCoroutine(SmoothCamOutForTruck());
             }
             else
             carAnim.Play("LevelUpCar");
@@ -117,22 +121,41 @@ public class TrackManager : MonoBehaviour
         {
             if(currentlevel >= 30)
             {
+                carCollider.SetFloat("car", 2);
                 carAnim.SetFloat("Car", 2);
                 carAnim.Play("bigtrucklvlupanim");
             }
             else if(currentlevel >= 10)
             {
+                carCollider.SetFloat("car", 1);
                 carAnim.SetFloat("Car", 1);
                 carAnim.Play("LevelUpTruck");
             }
             else
             {
+                carCollider.SetFloat("car", 0);
                 carAnim.SetFloat("Car", 0);
                 carAnim.Play("LevelUp");
             }
             
         }
 
+    }
+
+    IEnumerator SmoothCamOutForTruck()
+    {
+        while(false == false)
+        {
+            yield return null;
+            camera.GetComponent<CameraFollow>().offset.z = Mathf.LerpAngle(camera.GetComponent<CameraFollow>().offset.z, -0.5f, 0.05f);
+            if (camera.GetComponent<CameraFollow>().offset.z == -0.5f)
+            {
+                yield break;
+            }
+
+        }
+
+        
     }
 
     void changeCarModel(GameObject model)

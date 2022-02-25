@@ -411,6 +411,7 @@ MonoBehaviour:
   - levelToReach: 30
     newCarModel: {fileID: 500333061}
     changed: 0
+  carCollider: {fileID: 1801321142}
 --- !u!4 &13245894
 Transform:
   m_ObjectHideFlags: 0
@@ -28348,6 +28349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 390552508}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &966559959
 GameObject:
   m_ObjectHideFlags: 0
@@ -50795,6 +50797,7 @@ GameObject:
   - component: {fileID: 1801321137}
   - component: {fileID: 1801321140}
   - component: {fileID: 1801321141}
+  - component: {fileID: 1801321142}
   m_Layer: 8
   m_Name: CarCollider
   m_TagString: Untagged
@@ -50894,6 +50897,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6214265, y: 0.55880654, z: 2.4616344}
   m_Center: {x: 0.010990433, y: 0.69135386, z: -1.0097134}
+--- !u!95 &1801321142
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801321135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd2af8a2a210a114db55504e4194a3b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1806082367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69235,7 +69257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7045468750768423404}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.785, y: -0.39999992, z: -1.8099997}
+  m_LocalPosition: {x: 0.785, y: -0.3999999, z: -1.8099997}
   m_LocalScale: {x: 1.111111, y: 1.1111112, z: 1.1111112}
   m_Children: []
   m_Father: {fileID: 605992235}
