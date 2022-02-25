@@ -7,6 +7,8 @@ public class Pedestrian : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] int lvl = 1;
     [SerializeField] int lvlToKill = 0;
+    [SerializeField]
+    float startHitRange;
     Rigidbody rb;
 
     [HideInInspector] public bool collidedOnce = false;
@@ -19,6 +21,19 @@ public class Pedestrian : MonoBehaviour
         }
         
         force = TrackManager.instance.carCrashPower;
+    }
+    private void LateUpdate()
+    {
+        if(TrackManager.instance.car != null)
+        {
+            float range = Vector3.Distance(transform.position, TrackManager.instance.car.position);
+            if (range <= startHitRange)
+            {
+                transform.parent.parent.parent.GetComponent<Animator>().SetBool("hit", true);
+
+            }
+        }
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -57,6 +72,11 @@ public class Pedestrian : MonoBehaviour
             }
 
             //StartCoroutine(DestroySelf());
+        }
+        else if(other.gameObject.layer == 8)
+        {
+           // transform.parent.parent.parent.GetComponent<Animator>().SetFloat("randomHit", System.Convert.ToInt16(Random.Range(2, 3)));
+            transform.gameObject.layer = 11;
         }
     }
     private void OnCollisionEnter(Collision collision)

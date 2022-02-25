@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 playerOffset;
 
     private Vector3 currentOffset;
+    [SerializeField] public Vector3 offset = Vector3.zero;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class CameraFollow : MonoBehaviour
         if (target != null)
         {
             Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, currentOffset.z + target.position.z);
-            transform.position = newPosition;
+            transform.position = newPosition + offset;
         }
     }
 }

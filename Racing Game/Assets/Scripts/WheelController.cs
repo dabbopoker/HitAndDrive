@@ -27,6 +27,7 @@ public class WheelController : MonoBehaviour
 
         foreach (var wheel in wheelsToRotate)
         {
+            if(wheel.activeSelf)
             wheel.transform.Rotate(Time.deltaTime * rotationSpeed, 0, 0, Space.Self);
         }
 
