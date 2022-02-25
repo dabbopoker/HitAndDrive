@@ -7,7 +7,7 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
-[Ll]ogs/
+/[Ll]ogs/
 [Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
@@ -70,16 +70,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-Racing Game/Logs/AssetImportWorker0.log
-Racing Game/Logs/shadercompiler-AssetImportWorker0.log
-Racing Game/Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Racing Game/Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Racing Game/Logs/shadercompiler-UnityShaderCompiler.exe2.log
-Racing Game/Logs/shadercompiler-UnityShaderCompiler.exe3.log
-Racing Game/Logs/AssetImportWorker0.log
-Racing Game/Logs/Packages-Update.log
-Racing Game/Logs/shadercompiler-AssetImportWorker0.log
-Racing Game/Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Racing Game/Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Racing Game/Logs/shadercompiler-UnityShaderCompiler.exe2.log
-*.log
