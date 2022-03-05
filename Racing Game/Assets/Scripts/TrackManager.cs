@@ -64,8 +64,8 @@ public class TrackManager : MonoBehaviour
     private void Start()
     {
         usedCarModels.Add(standardCarModel);
-        
 
+        lvlText.text = "Lv." + currentlevel.ToString();
     }
     public void addLevel(int lvl)
     {
