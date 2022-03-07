@@ -27,6 +27,10 @@ public class CarDestroy : MonoBehaviour
         if (collision.gameObject.layer == 11)
         {
             Destroy(car);
+            foreach (BoxCollider boxCollider in GetComponents<BoxCollider>())
+            {
+                boxCollider.enabled = false;
+            }
             Instantiate(explosionParticle, gameObject.transform.position + new Vector3(0, 0.3f, 0), gameObject.transform.rotation);
             engineSound.Stop();
             FindObjectOfType<AudioManager>().Play("Fail");

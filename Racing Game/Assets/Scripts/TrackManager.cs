@@ -64,8 +64,8 @@ public class TrackManager : MonoBehaviour
     private void Start()
     {
         usedCarModels.Add(standardCarModel);
-        
 
+        lvlText.text = "Lv." + currentlevel.ToString();
     }
     public void addLevel(int lvl)
     {
@@ -147,8 +147,9 @@ public class TrackManager : MonoBehaviour
         while(false == false)
         {
             yield return null;
-            camera.GetComponent<CameraFollow>().offset.z = Mathf.LerpAngle(camera.GetComponent<CameraFollow>().offset.z, -0.5f, 0.05f);
-            if (camera.GetComponent<CameraFollow>().offset.z == -0.5f)
+            camera.GetComponent<CameraFollow>().offset.z = Mathf.LerpAngle(camera.GetComponent<CameraFollow>().offset.z, -0.75f, 0.05f);
+            camera.GetComponent<CameraFollow>().offset.y = Mathf.LerpAngle(camera.GetComponent<CameraFollow>().offset.y, 0.45f, 0.05f);
+            if (camera.GetComponent<CameraFollow>().offset.z == -0.75f)
             {
                 yield break;
             }
